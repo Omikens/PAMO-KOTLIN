@@ -1,18 +1,52 @@
 package com.example.bmi_kotlin
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioGroup
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
+import java.text.DecimalFormat
+
 
 class MainActivity : AppCompatActivity() {
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
+
+        val textViewBMI: TextView? = findViewById(R.id.textView)
+        val textViewPPM: EditText? = null
+        val editTextHeight: EditText? = findViewById(R.id.editTextNumberHeight)
+        val editTextWeight: EditText? = findViewById(R.id.editTextNumberWeight)
+        val editTextAge: EditText? = null
+        val buttonHome: Button? = null
+        val buttonCalories: Button? = findViewById(R.id.buttonCalories)
+        val radioGroup: RadioGroup? = null
+        val buttonBMI = findViewById<Button>(R.id.buttonBMI)
+
+        buttonBMI.setOnClickListener {
+            try {
+                val height = editTextHeight!!.text.toString().toInt().toDouble()
+                val weight = editTextWeight!!.text.toString().toInt().toDouble()
+                val bmi = weight / (height * height) * 10000
+                val decimalFormat = DecimalFormat("#.##")
+                val bmiFormat = decimalFormat.format(bmi)
+                textViewBMI!!.text = bmiFormat
+                buttonCalories!!.visibility = View.VISIBLE
+            } catch (e: NumberFormatException) {
+                val height = 0.0
+            }
+        }
+
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action!", Snackbar.LENGTH_LONG)

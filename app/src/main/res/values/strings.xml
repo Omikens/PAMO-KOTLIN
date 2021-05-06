@@ -1,12 +1,24 @@
 <resources>
-    <string name="app_name">BMI-Kotlin</string>
+    <string name="app_name">BMI</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_home">BMI Calculator</string>
+    <string name="my_name">Dawid Szabłowski</string>
+    <string name="my_number">s16667</string>
+    <string name="start">CALCULATOR</string>
+    <string name="calories">Show calories for my BMI</string>
+    <string name="calculate">Calculate BMI</string>
+    <string name="back">Back to home</string>
+    <string name="man">Male</string>
+    <string name="woman">Female</string>
+    <string name="recipes">Show recipes for me!</string>
+    <string name="news">CHARTS</string>
+    <string name="quiz">QUIZ</string>
+    <string name="bar">Bar Chart</string>
+    <string name="pie">Pie Chart</string>
 </resources>
